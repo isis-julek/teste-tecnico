@@ -521,34 +521,26 @@
     width: 260px; 
     height: 400px;
     top: 0px; 
-    left: 66px; 
-  }
-
-  .mockup-container {
-    width: 181px;
-    height: 352px;
-    top: 32px;
-    left: 40px; 
-  }
-
-  #lottie-container-vitaminaD.lottie-overlay {
-    width: 131px !important;
-    height: 198px !important;
-    top: 129px !important;
-    left: 25px !important;
+    left: 50%;
+    transform: translateX(-50%) !important;
   }
 
   .mockup-shadow {
     width: 283px;
     height: 62px;
     top: 338px;
-    left: 54px; 
+    left: 50%;
+    transform: translateX(-50%) scale(1) !important;
+  }
+
+  .mockup-shadow.is-hidden {
+    transform: translateX(-50%) scale(0.2) !important;
   }
 
   .carousel-btn {
     width: 32px;
     height: 56px;
-    top: 180px;
+    top: 180px; 
   }
 
   .btn-left {
@@ -556,7 +548,8 @@
   }
 
   .btn-right {
-    left: 345px;
+    left: auto !important; 
+    right: 16px; 
   }
 
   .content-left {
@@ -584,6 +577,95 @@
     -webkit-text-stroke: 2.11px #FFFFFF;
   }
 
+  .content-right {
+    width: 361px;
+    height: 252px;
+    top: 626px;
+    left: 16px;
+    grid-template-columns: repeat(2, 176px);
+    grid-template-rows: repeat(2, 122px);
+    gap: 8px 11px; 
+  }
+
+  .benefit-card {
+    width: 176px;
+    height: 122px;
+  }
+
+  .content-left, .content-right {
+  left: 50% !important;
+  transform: translateX(-50%) !important; 
+  opacity: 1 !important;
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out !important;
+  }
+
+  .carousel-slide.leave-left .content-left,
+  .carousel-slide.leave-left .content-right {
+  transform: translateX(-150vw) !important;
+  opacity: 0 !important;
+  }
+
+  .carousel-slide.leave-right .content-left,
+  .carousel-slide.leave-right .content-right {
+    transform: translateX(150vw) !important;
+    opacity: 0 !important;
+  }
+
+  .carousel-slide.enter-left .content-left,
+  .carousel-slide.enter-left .content-right {
+    transform: translateX(-150vw) !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+
+  .carousel-slide.enter-right .content-left,
+  .carousel-slide.enter-right .content-right {
+    transform: translateX(150vw) !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+
+  .portal-effect {
+    display: block !important;
+    width: 227px !important;
+    height: 45px !important;
+    top: 343px !important;
+    left: 50% !important; 
+    transform: translateX(-50%) !important; 
+    z-index: 0 !important; 
+  }
+
+  .magic-wrapper {
+    height: 385px !important; 
+    overflow: hidden !important;
+    z-index: 1 !important; 
+  }
+
+  .mockup-container {
+    width: 181px !important;
+    height: 352px !important;
+    top: 32px !important;
+    left: 40px !important; 
+  }
+
+  .mockup-container.is-falling {
+    transform: translateY(400px) !important; 
+  }
+
+  .product-mockup {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .mockup-container.is-on-ceiling {
+    transform: translateY(-600px) !important;
+    transition: none !important;
+  }
+
+
+
 
 
   .gummies-container-vitaminaD {
@@ -593,6 +675,13 @@
     line-height: 1;  
   }
 
+  #lottie-container-vitaminaD.lottie-overlay {
+    width: 131px !important;
+    height: 198px !important;
+    top: 129px !important;
+    left: 25px !important;
+  }
+  
   .gummies-vitaminaD {
     width: 111px;
     height: 25px;
@@ -644,6 +733,11 @@
 
 
 
+  
+  .carousel-slide[data-theme="green"] .subtitle {
+    top: 4px;
+    font-size: 20px;
+  }
 
   .title-ferro {
     width: 207px;
@@ -782,92 +876,5 @@
     height: 202px !important;
     top: 130px !important;
     left: 23px !important;
-  }
-
-
-
-  
-  .content-right {
-    width: 361px;
-    height: 252px;
-    top: 626px;
-    left: 16px;
-    grid-template-columns: repeat(2, 176px);
-    grid-template-rows: repeat(2, 122px);
-    gap: 8px 11px; 
-  }
-
-  .benefit-card {
-    width: 176px;
-    height: 122px;
-  }
-
-  .content-left, .content-right {
-    transform: translateX(0) !important; 
-    opacity: 1 !important;
-  }
-
-  .carousel-slide.leave-left .content-left,
-  .carousel-slide.leave-left .content-right {
-    transform: translateX(-100vw) !important; 
-    opacity: 0 !important;
-  }
-
-  .carousel-slide.leave-right .content-left,
-  .carousel-slide.leave-right .content-right {
-    transform: translateX(100vw) !important; 
-    opacity: 0 !important;
-  }
-
-  .carousel-slide.enter-left .content-left,
-  .carousel-slide.enter-left .content-right {
-    transform: translateX(-100vw) !important;
-    opacity: 0 !important;
-    transition: none !important;
-  }
-
-  .carousel-slide.enter-right .content-left,
-  .carousel-slide.enter-right .content-right {
-    transform: translateX(100vw) !important;
-    opacity: 0 !important;
-    transition: none !important;
-  }
-
-  .portal-effect {
-    display: block !important;
-    width: 227px !important;
-    height: 45px !important;
-    top: 343px !important;
-    left: 17px !important; 
-    z-index: 0 !important; 
-  }
-
-  .magic-wrapper {
-    height: 365px !important; 
-    overflow: hidden !important;
-    z-index: 1 !important; 
-  }
-
-  .mockup-container {
-    width: 181px !important;
-    height: 352px !important;
-    top: 32px !important;
-    left: 40px !important; 
-  }
-
-  .mockup-container.is-falling {
-    transform: translateY(400px) !important; 
-  }
-
-  .product-mockup {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  .mockup-container.is-on-ceiling {
-    transform: translateY(-600px) !important;
-    transition: none !important;
   }
 }
