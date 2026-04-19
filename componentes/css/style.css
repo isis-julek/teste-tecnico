@@ -333,18 +333,20 @@
   top: 540px; 
   left: 687px; 
   z-index: 0;
-  transition: background 0.6s ease-in-out, 
-              opacity 0.6s ease-out 0.1s, 
-              transform 0.6s ease-out 0.1s;
-  
   opacity: 1;
   transform: scale(1);
+  transition: background 0.6s ease-in-out, 
+              opacity 0.1s ease-out 0.5s, 
+              transform 0.1s ease-out 0.5s;
 }
 
 .mockup-shadow.is-hidden {
   opacity: 0;
   transform: scale(0.2); 
+  transition: opacity 0.3s ease-in, 
+              transform 0.3s ease-in;
 }
+
 .content-center {
     position: absolute;
     width: 420px;
@@ -496,4 +498,376 @@
 .carousel-slide.is-leaving .content-right {
   transform: translateY(-80px) !important;
   opacity: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    height: 980px; 
+    background-position: center top; 
+    background-size: 100% 100%; 
+  }
+
+  .benefits-section.theme-blue {
+    background-image: url('../imagens/Background1-mobile.svg');
+  }
+  .benefits-section.theme-green {
+    background-image: url('../imagens/Background2-mobile.svg');
+  }
+  .benefits-section.theme-yellow {
+    background-image: url('../imagens/Background3-mobile.svg');
+  }
+ 
+  .content-center {
+    width: 260px; 
+    height: 400px;
+    top: 0px; 
+    left: 66px; 
+  }
+
+  .mockup-container {
+    width: 181px;
+    height: 352px;
+    top: 32px;
+    left: 40px; 
+  }
+
+  #lottie-container-vitaminaD.lottie-overlay {
+    width: 131px !important;
+    height: 198px !important;
+    top: 129px !important;
+    left: 25px !important;
+  }
+
+  .mockup-shadow {
+    width: 283px;
+    height: 62px;
+    top: 338px;
+    left: 54px; 
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 56px;
+    top: 180px;
+  }
+
+  .btn-left {
+    left: 16px;
+  }
+
+  .btn-right {
+    left: 345px;
+  }
+
+  .content-left {
+    width: 361px;
+    height: 180px;
+    top: 410px; 
+    left: 16px;
+  }
+
+  .subtitle {
+    width: 95px;
+    height: 14px;
+    font-size: 18px;
+    top: 0;
+    left: 0;
+  }
+
+  .main-title {
+    width: 361px;
+    height: 43px;
+    top: 29px;
+    font-size: 61.93px;      
+    line-height: 42.22px;   
+    letter-spacing: 0.03em;  
+    -webkit-text-stroke: 2.11px #FFFFFF;
+  }
+
+
+
+  .gummies-container-vitaminaD {
+    top: -4px;
+    left: 250px;
+    font-size: 14px;        
+    line-height: 1;  
+  }
+
+  .gummies-vitaminaD {
+    width: 111px;
+    height: 25px;
+    gap: 7px;
+    font-size: 14px; 
+    border-radius: 703px;
+  }
+
+  .vectors-row {
+    width: 361px;
+    height: 70px;
+    top: 104px;
+  }
+
+  .shape-amiga-vector {
+    width: 142px;
+    height: 70px;
+    top: 0;
+    left: 0;
+  }
+
+  .shape-crescer-vector {
+    width: 92px;
+    height: 70px;
+    top: 0;
+    left: 150px;
+  }
+
+  .shape-dot-vitaminaD {
+    width: 31px;
+    height: 31px;
+    top: 0;
+    left: 250px;
+    border-width: 1.5px;
+  }
+
+  .shape-pill-vitaminaD {
+    width: 111px;
+    height: 35px;
+    top: 35px;
+    left: 250px;
+    border-width: 1.5px;
+    padding: 6px 15px; 
+  }
+
+  .shape-pill-vitaminaD span, .shape-dot-vitaminaD span {
+    font-size: 14px;
+  }
+
+
+
+
+  .title-ferro {
+    width: 207px;
+    height: 46px;
+    top: 33px;
+    font-size: 62px;
+    line-height: 46px;
+    -webkit-text-stroke: 2.3px #FFFFFF;
+  }
+
+  .gummies-container-ferro {
+    top: 44px;
+    left: 223px;
+  }
+
+  .gummies-ferro {
+    width: 138px;
+    height: 24px;
+    padding: 0; 
+    font-size: 14px;
+    border-radius: 767px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shape-dose-vector {
+    width: 99px;
+    height: 77px;
+  }
+
+  .shape-dot-ferro {
+    width: 34px;
+    height: 34px;
+    top: 0;
+    left: 109px;
+    border-width: 1.54px;
+    padding: 0;
+  }
+
+  .shape-pill-ferro {
+    width: 94px;
+    height: 39px;
+    top: 38px;
+    left: 109px;
+    border-width: 1.54px;
+    padding: 0; 
+  }
+
+  .shape-energia-vector {
+    width: 154px;
+    height: 77px;
+    top: 0;
+    left: 207px;
+  }
+
+  .shape-dot-ferro span, 
+  .shape-pill-ferro span {
+    font-size: 14px; 
+    line-height: 1;
+  }
+
+  #lottie-container-ferro.lottie-overlay {
+    width: 162px !important;
+    height: 245px !important;
+    top: 115px !important;
+    left: 9px !important;
+  }
+
+
+
+
+  .title-yellow {
+    width: 248px;
+    height: 41px;
+    top: 29px;
+    font-size: 56px;
+    line-height: 40px; 
+    -webkit-text-stroke: 2.02px #FFFFFF;
+  }
+
+  .gummies-container-yellow {
+    top: 37px;
+    left: 258px;
+  }
+
+  .gummies-yellow {
+    width: 103px;
+    height: 25px;
+    padding: 0;
+    gap: 7px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shape-dot-yellow {
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    border-width: 1.35px;
+  }
+
+  .shape-pill-yellow {
+    width: 82px;
+    height: 34px;
+    top: 33px;
+    left: 0;
+    border-width: 1.35px;
+    padding: 0; 
+  }
+
+  .shape-pill-yellow span {
+    font-size: 13px; 
+    line-height: 1;
+  }
+
+  .shape-para-uma-vector {
+    width: 135px;
+    height: 67px;
+    top: 0;
+    left: 86px;
+  }
+
+  .shape-mente-vector {
+    width: 136px;
+    height: 67px;
+    top: 0;
+    left: 225px;
+  }
+
+  #lottie-container-amarelo.lottie-overlay {
+    width: 133px !important;
+    height: 202px !important;
+    top: 130px !important;
+    left: 23px !important;
+  }
+
+
+
+  
+  .content-right {
+    width: 361px;
+    height: 252px;
+    top: 626px;
+    left: 16px;
+    grid-template-columns: repeat(2, 176px);
+    grid-template-rows: repeat(2, 122px);
+    gap: 8px 11px; 
+  }
+
+  .benefit-card {
+    width: 176px;
+    height: 122px;
+  }
+
+  .content-left, .content-right {
+    transform: translateX(0) !important; 
+    opacity: 1 !important;
+  }
+
+  .carousel-slide.leave-left .content-left,
+  .carousel-slide.leave-left .content-right {
+    transform: translateX(-100vw) !important; 
+    opacity: 0 !important;
+  }
+
+  .carousel-slide.leave-right .content-left,
+  .carousel-slide.leave-right .content-right {
+    transform: translateX(100vw) !important; 
+    opacity: 0 !important;
+  }
+
+  .carousel-slide.enter-left .content-left,
+  .carousel-slide.enter-left .content-right {
+    transform: translateX(-100vw) !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+
+  .carousel-slide.enter-right .content-left,
+  .carousel-slide.enter-right .content-right {
+    transform: translateX(100vw) !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+
+  .portal-effect {
+    display: block !important;
+    width: 227px !important;
+    height: 45px !important;
+    top: 343px !important;
+    left: 17px !important; 
+    z-index: 0 !important; 
+  }
+
+  .magic-wrapper {
+    height: 365px !important; 
+    overflow: hidden !important;
+    z-index: 1 !important; 
+  }
+
+  .mockup-container {
+    width: 181px !important;
+    height: 352px !important;
+    top: 32px !important;
+    left: 40px !important; 
+  }
+
+  .mockup-container.is-falling {
+    transform: translateY(400px) !important; 
+  }
+
+  .product-mockup {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .mockup-container.is-on-ceiling {
+    transform: translateY(-600px) !important;
+    transition: none !important;
+  }
 }

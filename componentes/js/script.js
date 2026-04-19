@@ -80,6 +80,80 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextSlide = slides[nextIndex];
         const nextMockup = nextSlide.querySelector('.mockup-container');
         const nextTheme = nextSlide.getAttribute('data-theme');
+        
+        let nomeProduto = ""; 
+        if (nextTheme === 'blue') nomeProduto = "Vitamina D";
+        else if (nextTheme === 'green') nomeProduto = "Ferro";
+        else if (nextTheme === 'yellow') nomeProduto = "Ômega 3";
+
+        const anunciador = document.getElementById('anunciador-acessibilidade');
+
+        if (window.innerWidth <= 768) {
+            
+            const leaveClass = direcao === 'next' ? 'leave-left' : 'leave-right';
+            const enterClass = direcao === 'next' ? 'enter-right' : 'enter-left';
+
+            nextSlide.classList.remove('is-active', 'leave-left', 'leave-right', 'enter-left', 'enter-right');
+            nextSlide.classList.add(enterClass);
+            currentPortal.classList.add('is-open');
+
+            setTimeout(() => {
+                currentMockup.classList.add('is-falling');
+            }, 150); 
+
+            setTimeout(() => {
+                currentSlide.classList.add(leaveClass); 
+            }, 300);
+
+            setTimeout(() => {
+                currentPortal.classList.remove('is-open');
+                shadow.classList.add('is-hidden');
+                
+                currentSlide.classList.remove('is-active'); 
+
+                if (nextTheme === 'blue') {
+                    shadow.className = 'mockup-shadow shadow-blue is-hidden';
+                    section.className = 'benefits-section theme-blue';
+                } else if (nextTheme === 'green') {
+                    shadow.className = 'mockup-shadow shadow-green is-hidden';
+                    section.className = 'benefits-section theme-green';
+                } else if (nextTheme === 'yellow') {
+                    shadow.className = 'mockup-shadow shadow-yellow is-hidden';
+                    section.className = 'benefits-section theme-yellow';
+                }
+
+                if (anunciador) anunciador.textContent = `Exibindo produto ${nomeProduto}. ${nextIndex + 1} de ${slides.length}.`;
+
+                nextMockup.style.transition = 'none';
+                nextMockup.classList.add('is-on-ceiling');
+                void nextMockup.offsetWidth;
+                
+                nextMockup.style.transition = 'transform 0.6s ease-in';
+                nextSlide.classList.remove(enterClass);
+                nextSlide.classList.add('is-active'); 
+                nextMockup.classList.remove('is-on-ceiling');
+                shadow.classList.remove('is-hidden');
+
+            }, 800); 
+
+
+            setTimeout(() => {
+                currentMockup.style.transition = 'none';
+                currentMockup.classList.remove('is-falling');
+                
+                setTimeout(() => {
+                    currentMockup.style.transition = 'transform 0.6s ease-in';
+                    currentIndex = nextIndex;
+                    isAnimating = false;
+
+                    if (btnLeft) btnLeft.style.pointerEvents = 'auto';
+                    if (btnRight) btnRight.style.pointerEvents = 'auto';
+                }, 50);
+
+            }, 1400); 
+
+            return; 
+        }
 
         currentPortal.classList.add('is-open');
 
@@ -107,6 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.className = 'benefits-section theme-yellow';
             }
 
+            if (anunciador) anunciador.textContent = `Exibindo produto ${nomeProduto}. ${nextIndex + 1} de ${slides.length}.`;
+
             nextMockup.style.transition = 'none';
             nextMockup.classList.add('is-on-ceiling');
 
@@ -127,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 isAnimating = false;
                 if (btnLeft) btnLeft.style.pointerEvents = 'auto';
                 if (btnRight) btnRight.style.pointerEvents = 'auto';
-                }, 50);
-            }, 2000); 
+            }, 50);
+        }, 2000); 
     }
 
     if (btnRight) btnRight.addEventListener('click', () => trocarSlide('next'));
