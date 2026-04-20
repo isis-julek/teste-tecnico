@@ -1,24 +1,26 @@
-@font-face {
-  font-family: 'Roca';
-  src: url('../fontes/Roca Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
+/* Fontes do Figma */
+@font-face { 
+  font-family: 'Roca'; 
+  src: url('../fontes/Roca Light.otf') format('opentype'); 
+  font-weight: 300; 
+  font-style: normal; 
 }
 
-@font-face {
-  font-family: 'Omnes';
-  src: url('../fontes/Omnes Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+@font-face { 
+  font-family: 'Omnes'; 
+  src: url('../fontes/Omnes Regular.ttf') format('truetype'); 
+  font-weight: 400; 
+  font-style: normal; 
 }
 
-@font-face {
-  font-family: 'Omnes';
-  src: url('../fontes/Omnes Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
+@font-face { 
+  font-family: 'Omnes'; 
+  src: url('../fontes/Omnes Bold.ttf') format('truetype'); 
+  font-weight: 700; 
+  font-style: normal; 
 }
 
+/* Variáveis de cor */
 :root {
   --color-blue-bg: #9DC8FF;
   --color-pink: #FD86CD;
@@ -30,16 +32,18 @@
   --color-yellow: #FFE47B;
 }
 
+/* Reset entre navegadores */
 * { 
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
 
+/* Container principal que engloba todo o carrossel */
 .benefits-section {
-  width: 100%;
-  max-width: 1921px; 
-  height: 850px;
+  width: 100%; 
+  max-width: 100.052vw; 
+  height: 44.270vw;
   margin: 0 auto; 
   position: relative; 
   overflow: hidden; 
@@ -47,827 +51,875 @@
   background-color: var(--color-offwhite);
 }
 
-.carousel-track {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.carousel-track { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
+  left: 0; 
 }
 
+/* Deixa todos os slides invisíveis */
 .carousel-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
   left: 0;
-  opacity: 0;
+  opacity: 0; 
   visibility: hidden; 
-  pointer-events: none;
   transition: opacity 0.6s ease-in-out, visibility 0.6s;
 }
 
+/* O .js usa essa classe para revelar só o slide da vez */
 .carousel-slide.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  opacity: 1; 
+  visibility: visible; 
+  pointer-events: auto; 
   z-index: 2; 
 }
 
-.content-left {
-  position: absolute;
-  width: 513px;
-  height: 317px;
-  top: 107px; 
-  left: 208px;
-}
-
-.subtitle {
-  position: absolute;
-  width: 152px;
-  height: 22px;
-  top: 5px;
-  left: 5px; 
-  font-family: 'Roca';
-  font-weight: 300;
-  font-style: italic;
-  font-size: 32px;
-  line-height: 1;
-  color: var(--color-dark);
-}
-
-.main-title {
-  position: absolute;
-  height: 60px;
-  top: 51px;
-  left: 0;
-  font-family: 'Omnes';
-  font-weight: 700;
-  font-size: 88px;
-  line-height: 60px; 
-  letter-spacing: 0.03em;
-  -webkit-text-stroke: 3px #FFFFFF;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.gummies-container {
-  position: absolute;
-  z-index: 3;
-}
-
-.gummies {
-  height: 50px;
-  background-color: var(--color-offwhite);
-  border-radius: 999px;
-  padding: 10px 32px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; 
-  font-family: 'Omnes', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  white-space: nowrap;
-}
-
-.vectors-row {
-  position: absolute;
-  width: 513px;
-  height: 100px;
-  top: 217px;
-  left: 0;
-}
-
-.shape-dot {
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  top: 0; 
-  border: 2px solid var(--color-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.shape-pill {
-  position: absolute;
-  height: 50px;
-  border: 2px solid var(--color-dark);
-  border-radius: 999px; 
-  padding: 11px 32px 13px 32px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.shape-dot span,
-.shape-pill span {
-  font-family: 'Roca';
-  font-weight: 300;
-  font-size: 20px;
-  color: var(--color-dark);
-  line-height: 1;
-  white-space: nowrap;
-}
-
-
-
-
-.title-vitaminaD { 
-  width: 513px; 
-  color: var(--color-pink);
-}
-.gummies-container-vitaminaD { 
-  top: 135px; 
-  left: 355px; 
-}
-.gummies-vitaminaD { 
-  width: 158px; 
-  color: var(--color-pink); 
-}
-.shape-amiga-vector { 
+/* Lado esquerdo: títulos e vetores */
+.content-left { 
   position: absolute; 
-  width: 201px; 
-  height: 100px; 
-  top: 0; 
+  width: 26.718vw; 
+  height: 16.510vw; 
+  top: 5.572vw; 
+  left: 10.833vw; 
+}
+
+.subtitle { 
+  position: absolute; 
+  width: 7.916vw; 
+  height: 1.145vw; 
+  top: 0.260vw; 
+  left: 0.260vw; 
+  font-family: 'Roca'; 
+  font-weight: 300; 
+  font-style: italic; 
+  font-size: 1.666vw; 
+  line-height: 1; 
+  color: var(--color-dark); 
+}
+
+.main-title { 
+  position: absolute; 
+  height: 3.125vw; 
+  top: 2.656vw; 
   left: 0; 
-  object-fit: contain;
+  font-family: 'Omnes'; 
+  font-weight: 700; 
+  font-size: 4.583vw; 
+  line-height: 3.125vw; 
+  letter-spacing: 0.03em; 
+  -webkit-text-stroke: 0.156vw #FFFFFF; 
+  text-transform: uppercase; 
+  white-space: nowrap; 
 }
-.shape-crescer-vector { 
+
+.gummies-container { 
   position: absolute; 
-  width: 129px; 
-  height: 100px; 
-  top: 0; 
-  left: 213px; 
-}
-.shape-dot-vitaminaD { 
-  left: 355px; 
-  background: var(--color-pink); 
-}
-.shape-pill-vitaminaD { 
-  width: 158px; 
-  top: 50px; 
-  left: 355px; 
-  background: var(--color-blue-bg); 
-}
-.shadow-blue {
-  background: radial-gradient(50% 50% at 50% 50%, #1463CC 0%, rgba(79, 144, 231, 0.466345) 63.94%, rgba(130, 184, 255, 0) 100%);
-}
-.benefits-section.theme-blue {
-  background-image: url('../imagens/Background1.svg');
-  background-size: cover;
+  z-index: 3; 
 }
 
-
-
-
-.title-ferro { 
-  width: 293px; 
-  color: var(--color-blue-ferro); 
+.gummies { 
+  height: 2.604vw; 
+  background-color: var(--color-offwhite); 
+  border-radius: 52.031vw; 
+  padding: 0.520vw 1.666vw; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 0.520vw; 
+  font-family: 'Omnes', sans-serif; 
+  font-weight: 400; 
+  font-size: 1.041vw; 
+  white-space: nowrap; 
 }
-.gummies-container-ferro { 
-  top: 56px; 
-  left: 317px; 
-}
-.gummies-ferro { 
-  width: 153px; 
-  color: var(--color-blue-ferro); 
-}
-.shape-dose-vector { 
+
+.vectors-row { 
   position: absolute; 
-  top: 0; 
+  width: 26.718vw; 
+  height: 5.208vw; 
+  top: 11.302vw; 
   left: 0; 
-  height: 100px; 
-  width: auto; 
 }
-.shape-dot-ferro { 
-  left: 142px; 
-  background: var(--color-green); 
-}
-.shape-pill-ferro { 
-  width: 122px; 
-  top: 49px; 
-  left: 142px; 
-  background: var(--color-green); 
-}
-.shape-energia-vector { 
+
+.shape-dot { 
   position: absolute; 
-  width: 200px; 
-  height: 100px; 
+  width: 2.291vw; 
+  height: 2.291vw; 
   top: 0; 
-  left: 270px; 
+  border: 0.104vw solid var(--color-dark); 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.shape-pill { 
+  position: absolute; 
+  height: 2.604vw; 
+  border: 0.104vw solid var(--color-dark); 
+  border-radius: 52.031vw; 
+  padding: 0.572vw 1.666vw 0.677vw 1.666vw; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.shape-dot span, 
+.shape-pill span { 
+  font-family: 'Roca'; 
+  font-weight: 300; 
+  font-size: 1.041vw; 
+  color: var(--color-dark); 
+  line-height: 1; 
+  white-space: nowrap; 
+}
+
+/* Centro: produto, sombra, Lottie e portal */
+.content-center { 
+  position: absolute; 
+  width: 21.875vw; 
+  height: 33.072vw; 
+  left: 39.114vw; 
+}
+
+.mockup-container { 
+  position: absolute; 
+  width: 15.104vw; 
+  height: 29.479vw; 
+  top: 3.593vw; 
+  left: 3.385vw; 
+  z-index: 1; 
+  transition: transform 0.6s ease-in; 
+}
+
+/* Adicionado para corrigir o bug de imagem vazando no desktop */
+.product-mockup { 
+  width: 100%; 
+  height: 100%; 
   object-fit: contain; 
-}
-.shadow-green {
-  background: radial-gradient(50% 50% at 50% 50%, #2E944D 0%, rgba(46, 148, 77, 0.466345) 63.94%, rgba(46, 148, 77, 0) 100%);}
-.benefits-section.theme-green {
-  background-image: url('../imagens/Background2.svg');
-  background-size: cover;
+  display: block; 
 }
 
-
-
-.title-yellow { 
-  width: 390px; 
-  top: 46px; 
-  color: var(--color-orange); 
-
-}
-.gummies-container-yellow { 
-  top: 130px; 
-  left: 328px; 
-}
-.gummies-yellow { 
-  color: var(--color-orange); 
-}
-.shape-dot-yellow { 
-  left: 0; 
-  background: var(--color-orange); 
-}
-.shape-pill-yellow { 
-  width: 122px; 
-  top: 49px; 
-  left: 0; 
-  background: var(--color-yellow); 
-}
-.shape-para-uma-vector { 
+/* Classe para evitar que o Lottie corte os mascotes */
+.lottie-overlay { 
   position: absolute; 
-  width: 200px; 
-  height: 100px; 
-  top: 0; 
-  left: 128px; 
-  object-fit: contain; 
+  z-index: 10; 
+  pointer-events: none; 
+  overflow: visible !important; 
 }
-.shape-mente-vector { 
+
+.lottie-overlay svg > g { 
+  clip-path: none !important; 
+}
+
+/* O .js manipula essas classes pra fazer a sombra aparecer/sumir */
+.mockup-shadow { 
   position: absolute; 
-  width: 201px; 
-  height: 100px; 
-  top: 0; 
-  left: 334px; 
-  object-fit: contain; 
-}
-#lottie-container-amarelo.lottie-overlay {
-  width: 215px !important;
-  height: 324px !important;
-  top: 209px !important;   
-  left: 38px !important;  
-}
-.shadow-yellow {
-  background: radial-gradient(50% 50% at 50% 50%, rgba(254, 203, 3, 0.8) 0%, rgba(254, 203, 3, 0.4) 63.94%, rgba(254, 203, 3, 0) 100%);
-}
-.benefits-section.theme-yellow {
-  background-image: url('../imagens/Background3.svg');
-  background-size: cover;
-  background-position: center;
+  width: 28.593vw; 
+  height: 6.250vw; 
+  top: 28.125vw; 
+  left: 35.781vw; 
+  z-index: 0; 
+  opacity: 1; 
+  transform: scale(1); 
+  transition: background 0.6s ease-in-out, opacity 0.1s ease-out 0.5s, transform 0.1s ease-out 0.5s; 
 }
 
-
-
-
-.mockup-shadow {
-  position: absolute;
-  width: 549px;
-  height: 120px;
-  top: 540px; 
-  left: 687px; 
-  z-index: 0;
-  opacity: 1;
-  transform: scale(1);
-  transition: background 0.6s ease-in-out, 
-              opacity 0.1s ease-out 0.5s, 
-              transform 0.1s ease-out 0.5s;
-}
-
-.mockup-shadow.is-hidden {
-  opacity: 0;
+.mockup-shadow.is-hidden { 
+  opacity: 0; 
   transform: scale(0.2); 
-  transition: opacity 0.3s ease-in, 
-              transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in; 
 }
 
-.content-center {
-    position: absolute;
-    width: 420px;
-    height: 635px;
-    left: 751px;
-}
-
-.mockup-container {
-    position: absolute;
-    width: 290px;
-    height: 566px; 
-    top: 69px; 
-    left: 65px; 
-    z-index: 1; 
-    transition: transform 0.6s ease-in; 
-}
-
-.lottie-overlay {
-    position: absolute;
-    z-index: 10;
-    pointer-events: none;
-    overflow: visible !important;
-}
-
-.lottie-overlay svg > g {
-    clip-path: none !important;
-}
-
-#lottie-container-vitaminaD.lottie-overlay {
-    width: 211px;
-    height: 319px;
-    top: 208px;
-    left: 40px;
-}
-
-#lottie-container-ferro.lottie-overlay {
-    width: 260px !important;
-    height: 394px !important;
-    top: 186px !important;  
-    left: 15px !important;
-}
-
-.content-right {
-  position: absolute;
-  width: 452px;
-  height: 316px;
-  top: 113px; 
-  left: 1268px;
-  display: grid;
-  grid-template-columns: repeat(2, 222px);
-  grid-template-rows: repeat(2, 154px);    
-  gap: 8px;
-}
-
-.benefit-card {
-  width: 222px; 
-  height: 154px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.benefit-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
-  display: block;
-}
-
-.carousel-btn {
-  position: absolute;
-  width: 32px;
-  height: 56px;
-  top: 307px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  z-index: 30;
-}
-
-.carousel-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.btn-left { left: 81px; }
-.btn-right { left: 1809px; }
-
-.portal-effect {
-  position: absolute;
-  width: 380px;
-  height: 75px;
-  top: 569px; 
-  left: 20px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
+.portal-effect { 
+  position: absolute; 
+  width: 19.791vw; 
+  height: 3.906vw; 
+  top: 29.635vw; 
+  left: 1.041vw; 
+  z-index: 0; 
+  pointer-events: none; 
+  opacity: 0; 
   transform: scaleX(0.2) scaleY(0.2); 
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-.portal-effect.is-open {
-  opacity: 1;
-  transform: scaleX(1) scaleY(1);
+.portal-effect.is-open { 
+  opacity: 1; 
+  transform: scaleX(1) scaleY(1); 
 }
 
-.magic-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 635px; 
-  top: 0;
-  left: 0;
-  overflow: hidden;
+.magic-wrapper { 
+  position: absolute; 
+  width: 100%; 
+  height: 33.072vw; 
+  top: 0; 
+  left: 0; 
+  overflow: hidden; 
   z-index: 1; 
 }
 
-.mockup-container.is-falling {
-  transform: translateY(600px); 
+/* Estados do carrossel disparados pelo .js */
+.mockup-container.is-falling { 
+  transform: translateY(31.250vw); 
 }
 
-.mockup-container.is-on-ceiling {
-  transform: translateY(-600px);
+.mockup-container.is-on-ceiling { 
+  transform: translateY(-31.250vw); 
   transition: none !important; 
 }
 
-.carousel-slide.is-active {
-  visibility: visible;
-  pointer-events: auto;
-  z-index: 2;
-}
-
 .content-left, 
-.content-right {
-  transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
-  transform: translateY(-80px);
-  opacity: 0;
+.content-right { 
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out; 
+  transform: translateY(-4.166vw); 
+  opacity: 0; 
 }
 
-.carousel-slide.is-active .content-left,
-.carousel-slide.is-active .content-right {
-  transform: translateY(0);
-  opacity: 1;
+.carousel-slide.is-active .content-left, 
+.carousel-slide.is-active .content-right { 
+  transform: translateY(0); 
+  opacity: 1; 
 }
 
-.carousel-slide.is-leaving .content-left,
-.carousel-slide.is-leaving .content-right {
-  transform: translateY(-80px) !important;
-  opacity: 0 !important;
+.carousel-slide.is-leaving .content-left, 
+.carousel-slide.is-leaving .content-right { 
+  transform: translateY(-4.166vw) !important; 
+  opacity: 0 !important; 
 }
 
+/* Lado direito: grid dos benefícios e botões das setas */
+.content-right { 
+  position: absolute; 
+  width: 23.541vw; 
+  height: 16.458vw; 
+  top: 5.885vw; 
+  left: 66.041vw; 
+  display: grid; 
+  grid-template-columns: repeat(2, 11.562vw); 
+  grid-template-rows: repeat(2, 8.020vw); 
+  gap: 0.416vw; 
+}
+
+.benefit-card { 
+  width: 11.562vw; 
+  height: 8.020vw; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.benefit-card img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  display: block; 
+}
+
+.carousel-btn { 
+  position: absolute; 
+  width: 1.666vw; 
+  height: 2.916vw; 
+  top: 15.989vw; 
+  background: transparent; 
+  border: none; 
+  padding: 0; 
+  cursor: pointer; 
+  z-index: 30; 
+}
+
+.carousel-btn img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  display: block; 
+}
+
+.btn-left { 
+  left: 4.218vw; 
+}
+
+.btn-right { 
+  left: 94.218vw; 
+}
+
+/* TEMAS E COMPONENTES ESPECÍFICOS DE CADA UM*/
+
+/* Vitamina D */
+.title-vitaminaD { 
+  width: 26.718vw; 
+  color: var(--color-pink); 
+}
+
+.gummies-container-vitaminaD { 
+  top: 7.031vw; 
+  left: 18.489vw; 
+}
+
+.gummies-vitaminaD { 
+  width: 8.229vw; 
+  color: var(--color-pink); 
+}
+
+.shape-amiga-vector { 
+  position: absolute; 
+  width: 10.468vw; 
+  height: 5.208vw; 
+  top: 0; 
+  left: 0; 
+  object-fit: contain; 
+}
+
+.shape-crescer-vector { 
+  position: absolute; 
+  width: 6.718vw; 
+  height: 5.208vw; 
+  top: 0; 
+  left: 11.093vw; 
+}
+
+.shape-dot-vitaminaD { 
+  left: 18.489vw; 
+  background: var(--color-pink); 
+}
+
+.shape-pill-vitaminaD { 
+  width: 8.229vw; 
+  top: 2.604vw; 
+  left: 18.489vw; 
+  background: var(--color-blue-bg); 
+}
+
+.shadow-blue { 
+  background: radial-gradient(50% 50% at 50% 50%, #1463CC 0%, rgba(79, 144, 231, 0.466345) 63.94%, rgba(130, 184, 255, 0) 100%); 
+}
+
+.benefits-section.theme-blue { 
+  background-image: url('../imagens/Background1.svg'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+#lottie-container-vitaminaD.lottie-overlay { 
+  width: 10.989vw; 
+  height: 16.614vw; 
+  top: 10.833vw; 
+  left: 2.083vw; 
+}
+
+/* Ferro */
+.title-ferro { 
+  width: 15.260vw; 
+  color: var(--color-blue-ferro); 
+}
+
+.gummies-container-ferro { 
+  top: 2.916vw; 
+  left: 16.510vw; 
+}
+
+.gummies-ferro { 
+  width: 7.968vw; 
+  color: var(--color-blue-ferro); 
+}
+
+.shape-dose-vector { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 5.208vw; 
+  width: auto; 
+}
+
+.shape-dot-ferro { 
+  left: 7.395vw; 
+  background: var(--color-green); 
+}
+
+.shape-pill-ferro { 
+  width: 6.354vw; 
+  top: 2.552vw; 
+  left: 7.395vw; 
+  background: var(--color-green); 
+}
+
+.shape-energia-vector { 
+  position: absolute; 
+  width: 10.416vw; 
+  height: 5.208vw; 
+  top: 0; 
+  left: 14.062vw; 
+  object-fit: contain; 
+}
+
+.shadow-green { 
+  background: radial-gradient(50% 50% at 50% 50%, #2E944D 0%, rgba(46, 148, 77, 0.466345) 63.94%, rgba(46, 148, 77, 0) 100%);
+}
+
+.benefits-section.theme-green { 
+  background-image: url('../imagens/Background2.svg'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+#lottie-container-ferro.lottie-overlay { 
+  width: 13.541vw !important; 
+  height: 20.520vw !important; 
+  top: 9.687vw !important; 
+  left: 0.781vw !important; 
+}
+
+/* Ômega 3 */
+.title-yellow { 
+  width: 20.312vw; 
+  top: 2.395vw; 
+  color: var(--color-orange); 
+}
+
+.gummies-container-yellow { 
+  top: 6.770vw; 
+  left: 17.083vw; 
+}
+
+.gummies-yellow { 
+  color: var(--color-orange); 
+}
+
+.shape-dot-yellow { 
+  left: 0; 
+  background: var(--color-orange); 
+}
+
+.shape-pill-yellow { 
+  width: 6.354vw; 
+  top: 2.552vw; 
+  left: 0; 
+  background: var(--color-yellow); 
+}
+
+.shape-para-uma-vector { 
+  position: absolute; 
+  width: 10.416vw; 
+  height: 5.208vw; 
+  top: 0; 
+  left: 6.666vw; 
+  object-fit: contain; 
+}
+
+.shape-mente-vector { 
+  position: absolute; 
+  width: 10.468vw; 
+  height: 5.208vw; 
+  top: 0; 
+  left: 17.395vw; 
+  object-fit: contain; 
+}
+
+.shadow-yellow { 
+  background: radial-gradient(50% 50% at 50% 50%, rgba(254, 203, 3, 0.8) 0%, rgba(254, 203, 3, 0.4) 63.94%, rgba(254, 203, 3, 0) 100%); 
+}
+
+.benefits-section.theme-yellow { 
+  background-image: url('../imagens/Background3.svg'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+#lottie-container-amarelo.lottie-overlay { 
+  width: 11.197vw !important; 
+  height: 16.875vw !important; 
+  top: 10.885vw !important; 
+  left: 1.979vw !important; 
+}
+
+/* RESPONSIVIDADE */
+/* Mobile */
 @media (max-width: 768px) {
-  .benefits-section {
-    height: 980px; 
-    background-position: center top; 
-    background-size: 100% 100%; 
+
+.benefits-section {
+    min-width: 100vw; 
   }
 
-  .benefits-section.theme-blue {
-    background-image: url('../imagens/Background1-mobile.svg');
-  }
-  .benefits-section.theme-green {
-    background-image: url('../imagens/Background2-mobile.svg');
-  }
-  .benefits-section.theme-yellow {
-    background-image: url('../imagens/Background3-mobile.svg');
-  }
- 
-  .content-center {
-    width: 260px; 
-    height: 400px;
-    top: 0px; 
-    left: 66px; 
-  }
+/* Esticando a section para encaixar as coisas em coluna */
+.benefits-section { 
+  height: 261.333vw; 
+  background-position: center top; 
+  background-size: 100% 100%; 
+}
 
-  .mockup-container {
-    width: 181px;
-    height: 352px;
-    top: 32px;
-    left: 40px; 
-  }
+.benefits-section.theme-blue { 
+  background-image: url('../imagens/Background1-mobile.svg'); 
+}
 
-  #lottie-container-vitaminaD.lottie-overlay {
-    width: 131px !important;
-    height: 198px !important;
-    top: 129px !important;
-    left: 25px !important;
-  }
+.benefits-section.theme-green { 
+  background-image: url('../imagens/Background2-mobile.svg'); 
+}
 
-  .mockup-shadow {
-    width: 283px;
-    height: 62px;
-    top: 338px;
-    left: 54px; 
-  }
+.benefits-section.theme-yellow { 
+  background-image: url('../imagens/Background3-mobile.svg'); 
+}
 
-  .carousel-btn {
-    width: 32px;
-    height: 56px;
-    top: 180px;
-  }
+/* Escalando o produto e alinhando no topo */
+.content-center {
+  width: 69.333vw; 
+  height: 106.666vw;
+  top: 0vw; 
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
 
-  .btn-left {
-    left: 16px;
-  }
+.mockup-container {
+  width: 46.666vw !important;
+  height: 90.666vw !important; 
+  top: 6.666vw !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 auto !important; 
+}
 
-  .btn-right {
-    left: 345px;
-  }
+.mockup-shadow {
+  width: 75.466vw;
+  height: 16.533vw;
+  top: 90.133vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: scale(1) !important; 
+}
 
-  .content-left {
-    width: 361px;
-    height: 180px;
-    top: 410px; 
-    left: 16px;
-  }
+#lottie-container-vitaminaD.lottie-overlay { 
+  width: 34.933vw !important; 
+  height: 52.800vw !important; 
+  top: 34.400vw !important; 
+  left: 6.666vw !important; 
+}
 
-  .subtitle {
-    width: 95px;
-    height: 14px;
-    font-size: 18px;
-    top: 0;
-    left: 0;
-  }
+#lottie-container-ferro.lottie-overlay { 
+  width: 43.200vw !important; 
+  height: 65.333vw !important; 
+  top: 30.666vw !important; 
+  left: 2.400vw !important; 
+}
 
-  .main-title {
-    width: 361px;
-    height: 43px;
-    top: 29px;
-    font-size: 61.93px;      
-    line-height: 42.22px;   
-    letter-spacing: 0.03em;  
-    -webkit-text-stroke: 2.11px #FFFFFF;
-  }
+#lottie-container-amarelo.lottie-overlay { 
+  width: 35.466vw !important; 
+  height: 53.866vw !important; 
+  top: 34.666vw !important; 
+  left: 6.133vw !important; 
+}
 
+/* Subindo as setas */
+.carousel-btn {
+  width: 8.533vw;
+  height: 14.933vw;
+  top: 48.000vw; /* Mantém as setas centralizadas na altura do produto */
+  z-index: 30 !important;
+}
 
+.btn-left {
+  left: 4.266vw !important;
+}
 
-  .gummies-container-vitaminaD {
-    top: -4px;
-    left: 250px;
-    font-size: 14px;        
-    line-height: 1;  
-  }
+.btn-right {
+  left: auto !important;
+  right: 4.266vw !important; 
+}
 
-  .gummies-vitaminaD {
-    width: 111px;
-    height: 25px;
-    gap: 7px;
-    font-size: 14px; 
-    border-radius: 703px;
-  }
+/* Títulos, vetores e benefícios agora ficam em baixo do produto */
+.content-left {
+  width: 96.266vw;
+  max-width: 92vw; /* Evita quebra em telas muito pequenas */
+  height: 48.000vw;
+  top: 109.333vw; 
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
 
-  .vectors-row {
-    width: 361px;
-    height: 70px;
-    top: 104px;
-  }
+.subtitle { 
+  width: 25.333vw; 
+  height: 3.733vw; 
+  font-size: 4.800vw; 
+  top: 0; 
+  left: 0; 
+}
 
-  .shape-amiga-vector {
-    width: 142px;
-    height: 70px;
-    top: 0;
-    left: 0;
-  }
+.main-title {
+  width: 96.266vw;
+  height: 11.466vw;
+  top: 7.733vw;
+  font-size: 16.514vw;      
+  line-height: 11.258vw;   
+  letter-spacing: 0.03em;  
+  -webkit-text-stroke: 0.562vw #FFFFFF;
+}
 
-  .shape-crescer-vector {
-    width: 92px;
-    height: 70px;
-    top: 0;
-    left: 150px;
-  }
+.title-vitaminaD{
+  left: -2vw;
+}
 
-  .shape-dot-vitaminaD {
-    width: 31px;
-    height: 31px;
-    top: 0;
-    left: 250px;
-    border-width: 1.5px;
-  }
+.gummies-container-vitaminaD { 
+  top: -1.066vw; 
+  left: 64vw;
+  font-size: 3.733vw; 
+  line-height: 1; 
+}
 
-  .shape-pill-vitaminaD {
-    width: 111px;
-    height: 35px;
-    top: 35px;
-    left: 250px;
-    border-width: 1.5px;
-    padding: 6px 15px; 
-  }
+.gummies-vitaminaD { 
+  width: 29.600vw; 
+  height: 6.666vw; 
+  gap: 1.866vw; 
+  font-size: 3.733vw; 
+  border-radius: 187.466vw; 
+}
 
-  .shape-pill-vitaminaD span, .shape-dot-vitaminaD span {
-    font-size: 14px;
-  }
+.vectors-row { 
+  width: 96.266vw; 
+  height: 18.666vw; 
+  top: 27.733vw; 
+}
 
+.shape-amiga-vector { 
+  width: 37.866vw; 
+  height: 18.666vw; 
+  top: 0; 
+  left: -2vw; 
+}
 
+.shape-crescer-vector { 
+  width: 24.533vw; 
+  height: 18.666vw; 
+  top: 0; 
+  left: 37.000vw; 
+}
 
+.shape-dot-vitaminaD { 
+  width: 8.266vw; 
+  height: 8.266vw; 
+  top: 0; 
+  left: 64vw; 
+  border-width: 0.400vw; 
+}
 
-  .title-ferro {
-    width: 207px;
-    height: 46px;
-    top: 33px;
-    font-size: 62px;
-    line-height: 46px;
-    -webkit-text-stroke: 2.3px #FFFFFF;
-  }
+.shape-pill-vitaminaD { 
+  width: 29.600vw; 
+  height: 9.333vw; 
+  top: 9.333vw; 
+  left: 64vw; 
+  border-width: 0.400vw; 
+  padding: 1.600vw 4.000vw; 
+}
 
-  .gummies-container-ferro {
-    top: 44px;
-    left: 223px;
-  }
+.shape-pill-vitaminaD span, 
+.shape-dot-vitaminaD span { 
+  font-size: 3.733vw; 
+}
 
-  .gummies-ferro {
-    width: 138px;
-    height: 24px;
-    padding: 0; 
-    font-size: 14px;
-    border-radius: 767px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.title-ferro {
+  width: 55.200vw;
+  height: 12.266vw;
+  top: 8.800vw;
+  font-size: 16.533vw;
+  line-height: 12.266vw;
+  -webkit-text-stroke: 0.613vw #FFFFFF;
+  color: var(--color-blue-ferro);
+}
 
-  .shape-dose-vector {
-    width: 99px;
-    height: 77px;
-  }
+.gummies-container-ferro { 
+  top: 11.733vw; 
+  left: 58vw; 
+}
 
-  .shape-dot-ferro {
-    width: 34px;
-    height: 34px;
-    top: 0;
-    left: 109px;
-    border-width: 1.54px;
-    padding: 0;
-  }
+.gummies-ferro { 
+  width: 36.800vw; 
+  height: 6.400vw; 
+  padding: 0; 
+  font-size: 3.733vw; 
+  border-radius: 204.533vw; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
 
-  .shape-pill-ferro {
-    width: 94px;
-    height: 39px;
-    top: 38px;
-    left: 109px;
-    border-width: 1.54px;
-    padding: 0; 
-  }
+.shape-dose-vector { 
+  width: 26.400vw; 
+  height: 20.533vw; 
+  left: -2vw
+}
 
-  .shape-energia-vector {
-    width: 154px;
-    height: 77px;
-    top: 0;
-    left: 207px;
-  }
+.shape-dot-ferro { 
+  width: 9.066vw; 
+  height: 9.066vw; 
+  top: 0; 
+  left: 26vw; 
+  border-width: 0.410vw; 
+  padding: 0; 
+}
 
-  .shape-dot-ferro span, 
-  .shape-pill-ferro span {
-    font-size: 14px; 
-    line-height: 1;
-  }
+.shape-pill-ferro { 
+  width: 25.066vw; 
+  height: 10.400vw; 
+  top: 10.133vw; 
+  left: 26vw; 
+  border-width: 0.410vw; 
+  padding: 0; 
+}
 
-  #lottie-container-ferro.lottie-overlay {
-    width: 162px !important;
-    height: 245px !important;
-    top: 115px !important;
-    left: 9px !important;
-  }
+.shape-energia-vector { 
+  width: 41.066vw; 
+  height: 20.533vw; 
+  top: 0; 
+  left: 53vw;
+}
 
+.shape-dot-ferro span, 
+.shape-pill-ferro span { 
+  font-size: 3.733vw; 
+  line-height: 1; 
+}
 
+.title-yellow {
+  width: 66.133vw;
+  height: 10.933vw;
+  top: 7.733vw;
+  font-size: 14.933vw;
+  line-height: 10.666vw; 
+  -webkit-text-stroke: 0.538vw #FFFFFF;
+  color: var(--color-orange); 
+}
 
+.gummies-container-yellow { 
+  top: 9.866vw; 
+  left: 67.800vw;
+}
 
-  .title-yellow {
-    width: 248px;
-    height: 41px;
-    top: 29px;
-    font-size: 56px;
-    line-height: 40px; 
-    -webkit-text-stroke: 2.02px #FFFFFF;
-  }
+.gummies-yellow { 
+  width: 27.466vw; 
+  height: 6.666vw; 
+  padding: 0; 
+  gap: 1.866vw; 
+  font-size: 3.733vw; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
 
-  .gummies-container-yellow {
-    top: 37px;
-    left: 258px;
-  }
+.shape-dot-yellow { 
+  width: 8.000vw; 
+  height: 8.000vw; 
+  top: 0; 
+  left: 0; 
+  border-width: 0.360vw; 
+}
 
-  .gummies-yellow {
-    width: 103px;
-    height: 25px;
-    padding: 0;
-    gap: 7px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.shape-pill-yellow { 
+  width: 21.866vw; 
+  height: 9.066vw; 
+  top: 8.800vw; 
+  left: 0; 
+  border-width: 0.360vw; 
+  padding: 0; 
+}
 
-  .shape-dot-yellow {
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
-    border-width: 1.35px;
-  }
+.shape-pill-yellow span { 
+  font-size: 3.466vw; 
+  line-height: 1; 
+}
 
-  .shape-pill-yellow {
-    width: 82px;
-    height: 34px;
-    top: 33px;
-    left: 0;
-    border-width: 1.35px;
-    padding: 0; 
-  }
+.shape-para-uma-vector { 
+  width: 36.000vw; 
+  height: 17.866vw; 
+  top: 0; 
+  left: 22.933vw; 
+}
 
-  .shape-pill-yellow span {
-    font-size: 13px; 
-    line-height: 1;
-  }
+.shape-mente-vector { 
+  width: 36.266vw; 
+  height: 17.866vw; 
+  top: 0; 
+  left: 59.000vw;
+}
 
-  .shape-para-uma-vector {
-    width: 135px;
-    height: 67px;
-    top: 0;
-    left: 86px;
-  }
+/* Benefícios jogados para o final da tela no mobile */
+.content-right {
+  width: 96.266vw;
+  max-width: 92vw;
+  height: 67.200vw;
+  top: 166.933vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 46.933vw);
+  grid-template-rows: repeat(2, 32.533vw);
+  gap: 2.133vw 2.933vw; 
+  justify-content: center;
+}
 
-  .shape-mente-vector {
-    width: 136px;
-    height: 67px;
-    top: 0;
-    left: 225px;
-  }
+.benefit-card { 
+  width: 46.933vw; 
+  height: 32.533vw; 
+}
 
-  #lottie-container-amarelo.lottie-overlay {
-    width: 133px !important;
-    height: 202px !important;
-    top: 130px !important;
-    left: 23px !important;
-  }
+/* Substitui as animações normais pelo efeito de swipe */
+.content-left, 
+.content-right { 
+  transform: translateX(0) !important; 
+  opacity: 1 !important; 
+}
 
+.carousel-slide.leave-left .content-left, 
+.carousel-slide.leave-left .content-right { 
+  transform: translateX(-100vw) !important; 
+  opacity: 0 !important; 
+}
 
+.carousel-slide.leave-right .content-left, 
+.carousel-slide.leave-right .content-right { 
+  transform: translateX(100vw) !important; 
+  opacity: 0 !important; 
+}
 
-  
-  .content-right {
-    width: 361px;
-    height: 252px;
-    top: 626px;
-    left: 16px;
-    grid-template-columns: repeat(2, 176px);
-    grid-template-rows: repeat(2, 122px);
-    gap: 8px 11px; 
-  }
+.carousel-slide.enter-left .content-left, 
+.carousel-slide.enter-left .content-right { 
+  transform: translateX(-100vw) !important; 
+  opacity: 0 !important; 
+  transition: none !important; 
+}
 
-  .benefit-card {
-    width: 176px;
-    height: 122px;
-  }
+.carousel-slide.enter-right .content-left, 
+.carousel-slide.enter-right .content-right { 
+  transform: translateX(100vw) !important; 
+  opacity: 0 !important; 
+  transition: none !important; 
+}
 
-  .content-left, .content-right {
-    transform: translateX(0) !important; 
-    opacity: 1 !important;
-  }
+/* Ajusta as dimensões do portal */
+.portal-effect { 
+  display: block !important; 
+  width: 60.533vw !important; 
+  height: 12.000vw !important; 
+  top: 91.466vw !important; 
+  left: 4.533vw !important; 
+  z-index: 0 !important; 
+}
 
-  .carousel-slide.leave-left .content-left,
-  .carousel-slide.leave-left .content-right {
-    transform: translateX(-100vw) !important; 
-    opacity: 0 !important;
-  }
+.magic-wrapper {
+  height: 97.600vw !important; 
+  overflow: hidden !important;
+  z-index: 1 !important; 
+}
 
-  .carousel-slide.leave-right .content-left,
-  .carousel-slide.leave-right .content-right {
-    transform: translateX(100vw) !important; 
-    opacity: 0 !important;
-  }
+.mockup-container.is-falling { 
+  transform: translateY(106.666vw) !important; 
+}
 
-  .carousel-slide.enter-left .content-left,
-  .carousel-slide.enter-left .content-right {
-    transform: translateX(-100vw) !important;
-    opacity: 0 !important;
-    transition: none !important;
-  }
-
-  .carousel-slide.enter-right .content-left,
-  .carousel-slide.enter-right .content-right {
-    transform: translateX(100vw) !important;
-    opacity: 0 !important;
-    transition: none !important;
-  }
-
-  .portal-effect {
-    display: block !important;
-    width: 227px !important;
-    height: 45px !important;
-    top: 343px !important;
-    left: 17px !important; 
-    z-index: 0 !important; 
-  }
-
-  .magic-wrapper {
-    height: 365px !important; 
-    overflow: hidden !important;
-    z-index: 1 !important; 
-  }
-
-  .mockup-container {
-    width: 181px !important;
-    height: 352px !important;
-    top: 32px !important;
-    left: 40px !important; 
-  }
-
-  .mockup-container.is-falling {
-    transform: translateY(400px) !important; 
-  }
-
-  .product-mockup {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  .mockup-container.is-on-ceiling {
-    transform: translateY(-600px) !important;
-    transition: none !important;
-  }
+.mockup-container.is-on-ceiling { 
+  transform: translateY(-160.000vw) !important; 
+  transition: none !important; 
+}
 }
